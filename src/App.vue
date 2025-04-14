@@ -4,11 +4,14 @@ import NewsInput from './components/NewsInput.vue'
 import NewsHead from '@/components/NewsHead.vue';
 import NewsTitle from '@/components/NewsTitle.vue';
 const formData = ref({
+  // Newspaper Head
+  head: '计协快报',
+  // Newspaper Title
   leftTitle: 'HNNUer',
   leftSubtitle: '今天吃什么？',
   rightTitle: '食堂篇',
   rightSubtitle: 'Special Recommendation',
-  // 添加新的数据字段
+  // Newspaper Sections
   sections: [
     {
       title: '兰桂苑二楼-螺蛳粉',
@@ -25,8 +28,6 @@ const formData = ref({
   ]
 })
 
-
-
 import luosifen from '@/assets/images/luosifen.jpg'
 import tiebanyouyu from '@/assets/images/tiebanyouyu.jpg'
 import kaopanfan from '@/assets/images/kaopanfan.jpg'
@@ -39,7 +40,7 @@ import kaopanfan from '@/assets/images/kaopanfan.jpg'
 
   <div class="newspaper-container">
     <div class="newspaper-head">
-      <NewsHead />
+      <NewsHead :head-text="formData.head" />
     </div>
       
     <div class="newspaper-title">
@@ -52,14 +53,18 @@ import kaopanfan from '@/assets/images/kaopanfan.jpg'
     </div>
 
     <div class="newspaper-section" v-for="(section, index) in formData.sections" :key="index">
-      <img :src="[luosifen, tiebanyouyu, kaopanfan][index]" :alt="section.title" 
-          :class="index % 2 === 0 ? 'section-img-left' : 'section-img-right'">
+      <img 
+        :src="section.imageUrl || [luosifen, tiebanyouyu, kaopanfan][index]" 
+        :alt="section.title"
+        :class="index % 2 === 0 ? 'section-img-left' : 'section-img-right'"
+      >
 
       <div class="section-text">
         <p style="font-size: 1.6rem;">{{ section.title }}</p>
-        <p>{{ section.content }}</p>
+        <!-- white-space: pre-line 保留文本中的换行符 -->
+        <p style="white-space: pre-line;">{{ section.content }}</p>
       </div>
-  </div>
+    </div>
 
   </div>
 </template>
@@ -99,5 +104,6 @@ import kaopanfan from '@/assets/images/kaopanfan.jpg'
 
 .section-text {
   margin-left: 15px;
+  flex: 1;
 }
 </style>

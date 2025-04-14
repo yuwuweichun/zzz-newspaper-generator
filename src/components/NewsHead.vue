@@ -1,10 +1,16 @@
 <script setup>
+defineProps({
+    headText: {
+        type: String,
+        default: '计协快报'
+    }
+})
 </script>
 
 <template>
     <div class="head-container">
         <div class="head-ellipse">
-          <p class="head-text">计协快报</p>
+          <p class="head-text">{{headText}}</p>
         </div>
     
         <div class="head-lines">

@@ -21,7 +21,7 @@ const updateValue = (key, value) => {
   })
 }
 
-// 添加新的更新方法
+
 const updateSection = (index, key, value) => {
   const updatedSections = [...props.modelValue.sections]
   updatedSections[index][key] = value
@@ -30,11 +30,31 @@ const updateSection = (index, key, value) => {
     sections: updatedSections
   })
 }
+
+// 添加图片处理逻辑
+const handleImageUpload = (index, event) => {
+  const file = event.target.files[0]
+  if (file) {
+    const imageUrl = URL.createObjectURL(file)
+    updateSection(index, 'imageUrl', imageUrl)
+  }
+}
 </script>
 
 <template>
-    <!-- title -->
     <div class="input-container">
+
+      <div class="head-input-group">
+        <label>
+          报头文字
+          <input
+            :value="modelValue.head"
+            @input="updateValue('head', $event.target.value)"
+            type="text"
+          >
+        </label>
+      </div>
+
       <div class="input-group">
         <label>
           左侧主标题
@@ -101,6 +121,24 @@ const updateSection = (index, key, value) => {
             ></textarea>
           </label>
         </div>
+
+        <div class="input-group">
+          <label>
+            图片上传
+            <input
+              type="file"
+              accept="image/*"
+              @change="handleImageUpload(index, $event)"
+            >
+          </label>
+          <!-- 图片预览 -->
+          <img 
+            v-if="section.imageUrl" 
+            :src="section.imageUrl" 
+            alt="预览图"
+            style="max-width: 200px; max-height: 200px; margin-top: 10px;"
+          >
+        </div>
         
       </div>
     </div>
@@ -115,6 +153,10 @@ const updateSection = (index, key, value) => {
   padding: 1rem;
   max-width: 1000px;
   margin: 0 auto;
+}
+
+.head-input-group {
+  width: 1000px;
 }
 
 .input-group {
