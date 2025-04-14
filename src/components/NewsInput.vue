@@ -146,17 +146,31 @@ const handleImageUpload = (index, event) => {
 
 <style scoped>
 .input-container {
+  background: 
+      /* 左右渐变 */
+      linear-gradient(
+          to right,
+          rgba(231, 213, 198, 0.85),
+          rgba(225, 207, 193, 0.85)
+      ),
+      /* 纸张纹理 */
+      var(--noise-filter-url);
+
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 2.5rem;
   padding: 1rem;
-  max-width: 1000px;
+  max-width: 720px;
+  padding: 10px 20px;
   margin: 0 auto;
+
 }
 
 .head-input-group {
-  width: 1000px;
+  width: 760px;
+  display: flex;
+  justify-content: center;
 }
 
 .input-group {
@@ -176,7 +190,7 @@ label {
 
 input {
   padding: 0.5rem;
-  border: 1px solid #ccc;
+  border: 1px solid #282D29;
   border-radius: 4px;
   font-size: 1rem;
   min-width: 200px;
@@ -190,7 +204,7 @@ input:focus {
 }
 
 textarea {
-  border: 1px solid #ccc;
+  border: 1px solid #282D29;
   border-radius: 4px;
   font-size: 1.1rem;
   resize: none; /* 禁止调整大小 */

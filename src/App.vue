@@ -34,30 +34,26 @@ import kaopanfan from '@/assets/images/kaopanfan.jpg'
 </script>
 
 <template>
+
   <div class="generator-container">
     <NewsInput v-model="formData" />
   </div>
+
+  <hr>
 
   <div class="newspaper-container">
     <div class="newspaper-head">
       <NewsHead :head-text="formData.head" />
     </div>
-      
+
     <div class="newspaper-title">
-      <NewsTitle 
-        :left-title="formData.leftTitle"
-        :left-subtitle="formData.leftSubtitle"
-        :right-title="formData.rightTitle"
-        :right-subtitle="formData.rightSubtitle"
-      />
+      <NewsTitle :left-title="formData.leftTitle" :left-subtitle="formData.leftSubtitle"
+        :right-title="formData.rightTitle" :right-subtitle="formData.rightSubtitle" />
     </div>
 
     <div class="newspaper-section" v-for="(section, index) in formData.sections" :key="index">
-      <img 
-        :src="section.imageUrl || [luosifen, tiebanyouyu, kaopanfan][index]" 
-        :alt="section.title"
-        :class="index % 2 === 0 ? 'section-img-left' : 'section-img-right'"
-      >
+      <img :src="section.imageUrl || [luosifen, tiebanyouyu, kaopanfan][index]" :alt="section.title"
+        :class="index % 2 === 0 ? 'section-img-left' : 'section-img-right'">
 
       <div class="section-text">
         <p style="font-size: 1.6rem;">{{ section.title }}</p>
@@ -67,23 +63,25 @@ import kaopanfan from '@/assets/images/kaopanfan.jpg'
     </div>
 
   </div>
+
+
+
+
 </template>
 
 <style scoped>
 .newspaper-container {
-    background: 
-      /* 左右渐变 */
-      linear-gradient(
-          to right,
-          rgba(231, 213, 198, 0.85),
-          rgba(225, 207, 193, 0.85)
-      ),
-      /* 纸张纹理 */
-      var(--noise-filter-url);
-    
-    width: 720px;
-    margin: auto;
-    padding: 10px 20px;
+  background:
+    /* 左右渐变 */
+    linear-gradient(to right,
+      rgba(231, 213, 198, 0.85),
+      rgba(225, 207, 193, 0.85)),
+    /* 纸张纹理 */
+    var(--noise-filter-url);
+
+  width: 720px;
+  margin: auto;
+  padding: 10px 20px;
 }
 
 .newspaper-section {
@@ -98,12 +96,25 @@ import kaopanfan from '@/assets/images/kaopanfan.jpg'
   flex-direction: row-reverse;
 }
 
-.section-img-left, .section-img-right {
+.section-img-left,
+.section-img-right {
   width: 40%;
 }
 
 .section-text {
   margin-left: 15px;
   flex: 1;
+}
+
+hr {
+  width: 760px;
+  height: 2px;
+  border: none;
+  background: linear-gradient(to right, 
+    rgba(40, 45, 41, 0.3), 
+    rgba(40, 45, 41, 0.8), 
+    rgba(40, 45, 41, 0.3));
+  margin: 5px auto;
+  border-radius: 2px;
 }
 </style>
