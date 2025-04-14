@@ -1,0 +1,39 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* 声明字体 */
+@font-face {
+    /* 定义字体名称 */
+    font-family: 'ZZZ';
+    /* 指定字体文件路径 */
+    src: url('@/assets/font/zzz.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    /* 优化字体加载 */
+    font-display: swap;
+    
+}
+
+:root {
+    /* 添加字体变量 */
+    --primary-font: 'ZZZ', sans-serif;
+    /* 添加字体颜色变量 */
+    --text-color: #282D29;
+    /* 添加字体大小变量 */
+    --font-size-large: 1.1rem;
+    /* 添加噪声纹理变量 */
+    --noise-filter-url: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.6' numOctaves='10' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+body {
+    /* 应用字体 */
+    font-family: var(--primary-font);
+    /* 应用字体颜色 */
+    color: var(--text-color);
+    /* 设置字体大小 */
+    font-size: var(--font-size-large);
+    /* 字体模糊 */
+    filter: blur(0.25px);
+}
