@@ -161,7 +161,7 @@ const handleImageUpload = (index, event) => {
   justify-content: center;
   gap: 2.5rem;
   padding: 1rem;
-  max-width: 720px;
+  width: 720px;
   padding: 10px 20px;
   margin: 0 auto;
 
@@ -180,7 +180,7 @@ const handleImageUpload = (index, event) => {
 }
 
 .section-inputs {
-  width: 1000px;
+  width: 720px;
 }
 
 
