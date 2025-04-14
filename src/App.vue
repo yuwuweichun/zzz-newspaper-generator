@@ -42,6 +42,7 @@ import kaopanfan from '@/assets/images/kaopanfan.jpg'
   <hr>
 
   <div class="newspaper-container">
+  
     <div class="newspaper-head">
       <NewsHead :head-text="formData.head" />
     </div>
