@@ -5,7 +5,7 @@
 ### 导出
 完成编辑后，点击"导出为图片"即可
 ## 效果示例
-![example1]('./src/assets/output1.png')
-![example2]('./src/assets/output2.jpg')
+![example1](./src/assets/output1.png)
+![example2](./src/assets/output2.jpg)
 
 *目前仅支持编辑生成单一排版样式的报纸。以后也许会有更多排版样式，也许？*
