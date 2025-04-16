@@ -5,8 +5,8 @@
 ### 导出
 完成编辑后，点击"导出为图片"即可
 ## 效果示例
-<img src="./src/assets/images/example1.jpg" width="760" />
-<img src="./src/assets/images/example2.png" width="760" />
+<img src="./src/assets/images/example1.png" width="760" />
+<img src="./src/assets/images/example2.jpg" width="760" />
 
 
 
