@@ -11,7 +11,7 @@ const exportToImage = async () => {
 
   try {
     const canvas = await html2canvas(newspaperElement, {
-      scale: 2, // 提高导出图片质量
+      scale: 2, // 分辨率（质量）72dpi*scale
       logging: false,
       useCORS: true // 如果需要处理跨域图片
     })
