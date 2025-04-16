@@ -5,7 +5,9 @@
 ### 导出
 完成编辑后，点击"导出为图片"即可
 ## 效果示例
-![example](./src/assets/images/example.png)
+<img src="./src/assets/images/example1.jpg" width="760" />
+<img src="./src/assets/images/example2.png" width="760" />
+
 
 
 *目前仅支持编辑生成单一排版样式的报纸。以后也许会有更多排版样式，也许？*
