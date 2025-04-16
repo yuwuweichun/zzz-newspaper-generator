@@ -2,7 +2,8 @@
 ## 如何使用
 ### 编辑
 在上方编辑区域中，根据输入框前的标签内容填写报纸区域中对应的字段内容，下方报纸区域中的字段内容会更新为你填写的字段内容。
-[在线使用](https://yuwuweichun.github.io/zzz-newspaper-generator/)
+
+>[在线使用](https://yuwuweichun.github.io/zzz-newspaper-generator/)
 ### 导出
 完成编辑后，点击"导出为图片"即可
 ## 效果示例
