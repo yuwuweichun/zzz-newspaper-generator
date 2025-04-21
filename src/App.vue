@@ -10,7 +10,7 @@ const formData = ref({
   leftTitle: '1.7版本',
   leftSubtitle: '将于4月23日上线',
   rightTitle: '调频&复刻',
-  rightSubtitle: '「薇薇安」&「简」，',
+  rightSubtitle: '「薇薇安」&「简」',
   // Newspaper Sections
   sections: [
     {
